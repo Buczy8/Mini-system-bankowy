@@ -19,7 +19,7 @@ std::string Account::getOwnerName() const {
     return ownerName;
 }
 
-double Account::getbalance() const {
+double Account::getBalance() const {
     return static_cast<double>(balance) / 100.0;
 }
 

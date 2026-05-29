@@ -16,7 +16,7 @@ public:
 
     std::string getOwnerName() const;
 
-    double getbalance() const; // zwraca balans w złotówkach
+    double getBalance() const; // zwraca balans w złotówkach
 
     void deposit(long long amount);
 

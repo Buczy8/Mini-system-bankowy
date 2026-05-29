@@ -3,4 +3,6 @@ project(Mini_system_bankowy)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Mini_system_bankowy main.cpp)
+add_executable(Mini_system_bankowy src/main.cpp
+        src/model/Account.cpp
+        src/model/Account.h)

@@ -5,4 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Mini_system_bankowy src/main.cpp
         src/model/Account.cpp
-        src/model/Account.h)
+        src/model/Account.h
+        src/repository/AccountRepository.h
+        src/repository/InMemoryAccountRepository.cpp
+        src/repository/InMemoryAccountRepository.h)

@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "model/Account.h"
+#include "repository/InMemoryAccountRepository.h"
 
 
 int main() {
@@ -12,5 +13,15 @@ int main() {
     std::cout <<  account.getbalance() << std::endl;
     std::cout << account.getOwnerName() << std::endl;
     std::cout << account.getAccountNumber() << std::endl;
+    InMemoryAccountRepository repo;
+    repo.save(account);
+    auto retrievedAccount = repo.findByAccountNumber("1234567890");
+    if (retrievedAccount) {
+        std::cout << "Znaleziono konto o numerze konta: " << retrievedAccount->getAccountNumber() << std::endl;
+    }
+    else {
+        std::cout << "Nie znaleziono konta o podanym numerze konta." << std::endl;
+    }
+
     return 0;
 }

@@ -8,4 +8,6 @@ add_executable(Mini_system_bankowy src/main.cpp
         src/model/Account.h
         src/repository/AccountRepository.h
         src/repository/InMemoryAccountRepository.cpp
-        src/repository/InMemoryAccountRepository.h)
+        src/repository/InMemoryAccountRepository.h
+        src/service/BankService.cpp
+        src/service/BankService.h)

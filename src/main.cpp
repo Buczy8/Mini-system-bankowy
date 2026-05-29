@@ -2,26 +2,25 @@
 
 #include "model/Account.h"
 #include "repository/InMemoryAccountRepository.h"
+#include "service/BankService.h"
 
 
 int main() {
-    Account account("1234567890", "Jan Kowalski", 100000);
-    std::cout <<  account.getbalance() << std::endl;
-    account.deposit(50000);
-    std::cout <<  account.getbalance() << std::endl;
-    account.withdraw(20000);
-    std::cout <<  account.getbalance() << std::endl;
-    std::cout << account.getOwnerName() << std::endl;
-    std::cout << account.getAccountNumber() << std::endl;
-    InMemoryAccountRepository repo;
-    repo.save(account);
-    auto retrievedAccount = repo.findByAccountNumber("1234567890");
-    if (retrievedAccount) {
-        std::cout << "Znaleziono konto o numerze konta: " << retrievedAccount->getAccountNumber() << std::endl;
-    }
-    else {
-        std::cout << "Nie znaleziono konta o podanym numerze konta." << std::endl;
-    }
+    InMemoryAccountRepository repository;
+    BankService bankService(repository);
+
+    std::string KowalskiAccount = bankService.createAccount("Jan Kowalski");
+    std::string NowakAccount = bankService.createAccount("Anna Nowak");
+    Account KowalskiAccountInfo = bankService.getAccountInfo(KowalskiAccount);
+    Account NowakAccountInfo = bankService.getAccountInfo(NowakAccount);
+    std::cout << KowalskiAccountInfo.getBalance() << std::endl;
+    std::cout << NowakAccountInfo.getBalance()<< std::endl;
+    bankService.deposit(KowalskiAccount, 100.50);
+    KowalskiAccountInfo = bankService.getAccountInfo(KowalskiAccount);
+    std::cout << KowalskiAccountInfo.getBalance() << std::endl;
+    bankService.withdraw(KowalskiAccount, 50.33);
+    KowalskiAccountInfo = bankService.getAccountInfo(KowalskiAccount);
+    std::cout << KowalskiAccountInfo.getBalance() << std::endl;
 
     return 0;
 }

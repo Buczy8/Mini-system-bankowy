@@ -3,7 +3,7 @@
 
 #include <string>
 #include "../repository/AccountRepository.h"
-
+#include "../model/Account.h"
 
 class BankService {
 private:

@@ -1,5 +1,4 @@
 #include "ConsoleController.h"
-#include "../model/Account.h"
 
 #include <iostream>
 #include <limits> // do czyszczenia buforu

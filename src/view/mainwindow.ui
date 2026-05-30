@@ -304,7 +304,7 @@
        <item>
         <widget class="QPushButton" name="btnWithdraw">
          <property name="text">
-          <string>Wpłać</string>
+          <string>Wypłać</string>
          </property>
         </widget>
        </item>
@@ -382,7 +382,7 @@
        <item>
         <widget class="QPushButton" name="btnDeposit">
          <property name="text">
-          <string>Wypłać</string>
+          <string>Wpłać</string>
          </property>
         </widget>
        </item>

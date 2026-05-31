@@ -2,7 +2,7 @@
 #define MINI_SYSTEM_BANKOWY_MAINWINDOW_H
 
 #include <QMainWindow>
-#include "../service/BankService.h"
+#include "../service/IBankService.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -16,7 +16,7 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    explicit MainWindow(BankService &service, QWidget *parent = nullptr);
+    explicit MainWindow(IBankService &service, QWidget *parent = nullptr);
 
     ~MainWindow() override;
 
@@ -31,7 +31,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    BankService &bankService;
+    IBankService &bankService;
 };
 
 

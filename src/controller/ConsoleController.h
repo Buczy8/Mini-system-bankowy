@@ -2,12 +2,12 @@
 #define MINI_SYSTEM_BANKOWY_CONSOLECONTROLLER_H
 
 
-#include "../service/BankService.h"
+#include "../service/IBankService.h"
 
 
 class ConsoleController {
 private:
-    BankService &bankService;
+    IBankService &bankService;
 
     void displayMenu() const;
 
@@ -22,7 +22,7 @@ private:
     void clearInputBuffer() const; // czyszczenie buforu
 
 public:
-    explicit ConsoleController(BankService &service);
+    explicit ConsoleController(IBankService &service);
 
     void run();
 };

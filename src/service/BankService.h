@@ -3,9 +3,9 @@
 
 #include <string>
 #include "../repository/AccountRepository.h"
-#include "../model/Account.h"
+#include "IBankService.h"
 
-class BankService {
+class BankService : public IBankService {
 private:
     AccountRepository &accountRepository;
 
@@ -15,13 +15,13 @@ private:
 public:
     explicit BankService(AccountRepository &repository); // nie bedzie nie jawnej konwersji typów
 
-    std::string createAccount(const std::string &ownerName);
+    std::string createAccount(const std::string &ownerName) override;
 
-    void deposit(const std::string &accountNumber, double amount);
+    void deposit(const std::string &accountNumber, double amount) override;
 
-    void withdraw(const std::string &accountNumber, double amount);
+    void withdraw(const std::string &accountNumber, double amount) override;
 
-    Account getAccountInfo(const std::string& accountNumber);
+    Account getAccountInfo(const std::string& accountNumber) override;
 };
 
 

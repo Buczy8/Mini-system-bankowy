@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 
-MainWindow::MainWindow(BankService &service, QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow),
+MainWindow::MainWindow(IBankService &service, QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow),
                                                                 bankService(service) {
     ui->setupUi(this);
 }

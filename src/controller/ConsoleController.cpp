@@ -3,7 +3,7 @@
 #include <iostream>
 #include <limits> // do czyszczenia buforu
 
-ConsoleController::ConsoleController(BankService &service) : bankService(service) {
+ConsoleController::ConsoleController(IBankService &service) : bankService(service) {
 }
 
 void ConsoleController::displayMenu() const {

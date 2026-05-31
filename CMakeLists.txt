@@ -29,7 +29,8 @@ add_executable(Mini_system_bankowy src/main.cpp
         src/view/mainwindow.ui
         src/view/mainwindow.cpp
         src/view/mainwindow.h
-        src/view/mainwindow.ui)
+        src/view/mainwindow.ui
+        src/service/IBankService.h)
 
 target_link_libraries(Mini_system_bankowy
         Qt6::Core
